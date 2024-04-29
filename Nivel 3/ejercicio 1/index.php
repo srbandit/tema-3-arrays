@@ -9,7 +9,7 @@ print_r($cuadrado);
 
 function calcularCuadrado($numero)
 {
-    return ($numero * $numero);
+    return pow($numero, 3);
 }
 
 
