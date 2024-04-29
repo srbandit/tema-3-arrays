@@ -2,26 +2,23 @@
 
 $array = ["hola", "php", "html"];
 $letra = "h";
-
-
-
-if(contienenCaracter($array, $letra)){
-    echo "Todas las palabras contienen la letra " . $letra;
+$resultado = contieneLetra($array, $letra);
+if ($resultado == true) {
+    echo "true";
 }else{
-    echo "Ninguna palabra contiene la letra " . $letra;
+    echo "false";
 }
 
 
-function contienenCaracter(array $array, String $letra)
-{
-    foreach ($array as $palabra) {
-        if (strpos($palabra, $letra) === false) {
-            return false;
-        } else {
-            return true;
+function contieneLetra($array, $letra){
+    $total = count($array);
+    $coincidencias = 0;
+    for ($i=0; $i < $total; $i++) { 
+        if(str_contains($array[$i], $letra)){
+            $coincidencias++;
         }
     }
+    return $total == $coincidencias;
 }
-
 
 ?>
